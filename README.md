@@ -36,19 +36,23 @@ Siga os passos abaixo para configurar e executar os testes de aceitação.
 ### 1. Clonar o Repositório
 
 bash
+
 git clone <https://github.com/VictoriaPriscila28/ProjetoFinalVeV.git>
 cd <ProjetoFinalVeV> 
 
-### 2. BConfigurar o ambiente virtual
+### 2. Configurar o ambiente virtual
 python -m venv venv
-# No Windows:
+### No Windows:
 .\venv\Scripts\activate
-# No macOS/Linux:
+### No macOS/Linux:
 source venv/bin/activate
 
 ### 3. Baixar as dependências
+
 pip install behave # Essencial para rodar os testes
-# Instalações adicionais para os módulos mockados do sistema (calculadora, sistema_web)
+
+### Instalações adicionais para os módulos mockados do sistema (calculadora, sistema_web)
+
 pip install spacy
 python -m spacy download pt_core_news_sm # Para o spacy, se usado em algum mock
 
