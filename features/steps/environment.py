@@ -1,4 +1,5 @@
 # features/steps/environment.py
+from behave import given, when, then
 from src.sistema_web import SistemaWeb # Importa sua classe de simulação
 
 def before_scenario(context, scenario):
@@ -8,6 +9,5 @@ def before_scenario(context, scenario):
     que cada cenário de teste seja independente dos outros.
     """
     SistemaWeb.reset()
-    # Para a calculadora, não é necessário reset, pois ela é stateless.
-    # if "Calculadora" not in scenario.feature.name: # Exemplo de condicional se houvessem mais resets
-    #    SistemaWeb.reset()
+    # A Calculadora não precisa de reset, pois é stateless.
+    # Se houvesse alguma configuração específica para a calculadora, ela seria removida aqui.

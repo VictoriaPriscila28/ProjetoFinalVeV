@@ -18,11 +18,14 @@ class SistemaWeb:
         cls._pagina_atual = ""
         cls._resultados_busca = []
 
+    # DEPOIS (melhor: limpa mensagens apenas no reset de cenário)
     @classmethod
     def acessar_pagina(cls, pagina):
         cls._pagina_atual = pagina
-        cls._mensagens_sucesso = [] # Limpa mensagens ao mudar de página
-        cls._mensagens_erro = []
+    # As mensagens AGORA SÓ SERÃO LIMPAS no SistemaWeb.reset() do environment.py
+    # Isso permite que os THENS verifiquem as mensagens após a ação.
+    # Se uma mensagem precisar ser limpa *dentro* de uma ação (ex: clique de botão), faça explicitamente.
+        pass # Remova as linhas de limpeza daqui
 
     @classmethod
     def cadastrar_pessoa(cls, nome, idade, email):
